@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.cumt.ec.shop.mapper.CategoryMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.edu.cumt.ec.shop.entity.Category">
+        <id column="category_id" property="categoryId" />
+        <result column="category_name" property="categoryName" />
+        <result column="show_sequence" property="showSequence" />
+        <result column="creator_id" property="creatorId" />
+        <result column="creator_name" property="creatorName" />
+        <result column="created_datetime" property="createdDatetime" />
+        <result column="editor_id" property="editorId" />
+        <result column="editor_name" property="editorName" />
+        <result column="updated_datetime" property="updatedDatetime" />
+        <result column="deleted" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        category_id, category_name, show_sequence, creator_id, creator_name, created_datetime, editor_id, editor_name, updated_datetime, deleted
+    </sql>
+
+</mapper>

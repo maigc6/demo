@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.cumt.ec.shop.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.edu.cumt.ec.shop.entity.User">
+        <id column="user_id" property="userId" />
+        <result column="phone_number" property="phoneNumber" />
+        <result column="email" property="email" />
+        <result column="user_name" property="userName" />
+        <result column="creator_id" property="creatorId" />
+        <result column="creator_name" property="creatorName" />
+        <result column="created_datetime" property="createdDatetime" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modifier_name" property="modifierName" />
+        <result column="updated_datetime" property="updatedDatetime" />
+        <result column="deleted" property="deleted" />
+    </resultMap>
+    
+    <resultMap id="UserVoResult" extends="BaseResultMap" type="cn.edu.cumt.ec.shop.vo.UserVo">
+        <collection property="roles" column="{userId = user_id}" ofType="cn.edu.cumt.ec.shop.entity.Role" select="cn.edu.cumt.ec.shop.mapper.RoleMapper.listByUserId"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_id, phone_number, email, user_name, pwd, creator_id, creator_name, created_datetime, modifier_id, modifier_name, updated_datetime, deleted
+    </sql>
+
+    <select id="getJwtUserByPhoneNumber" resultType="cn.edu.cumt.ec.shop.security.JwtUser">
+        select user_id userId, phone_number phoneNumber, email, user_name userName, pwd password, creator_id creatorId, creator_name creatorName, created_datetime creatorDateime, modifier_id, modifier_name, updated_datetime, deleted
+        from `user`
+        where phone_number=#{phoneNumber}
+    </select>
+
+    <select id="page" resultMap="UserVoResult" parameterType="cn.edu.cumt.ec.shop.dto.UserQueryParam">
+        select user_id, phone_number, email, user_name, creator_id, creator_name, created_datetime, modifier_id, modifier_name, updated_datetime, deleted
+        from `user`
+        <where>
+            <if test="userQueryParam.phoneNumber !=null and userQueryParam.phoneNumber!=''">
+                phone_number like concat('%',#{userQueryParam.phoneNumber},'%')
+            </if>
+            <if test="userQueryParam.userName !=null and userQueryParam.userName!=''">
+                and user_name like concat('%',#{userQueryParam.userName},'%')
+            </if>
+            <if test="userQueryParam.roleId !=null and userQueryParam.roleId!=0">
+               and user_id in (select user_id from user_role where role_id=#{userQueryParam.roleId})
+            </if>
+        </where>
+    </select>
+
+</mapper>

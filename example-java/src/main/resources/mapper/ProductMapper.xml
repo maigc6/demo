@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.cumt.ec.shop.mapper.ProductMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.edu.cumt.ec.shop.entity.Product">
+        <id column="product_id" property="productId" />
+        <result column="category_id" property="categoryId" />
+        <result column="product_name" property="productName" />
+        <result column="introduction" property="introduction" />
+        <result column="price" property="price" />
+        <result column="stock" property="stock" />
+        <result column="sale_count" property="saleCount" />
+        <result column="on_shelf" property="onShelf" />
+        <result column="creator_id" property="creatorId" />
+        <result column="creator_name" property="creatorName" />
+        <result column="created_datetime" property="createdDatetime" />
+        <result column="editor_id" property="editorId" />
+        <result column="editor_name" property="editorName" />
+        <result column="updated_datetime" property="updatedDatetime" />
+        <result column="deleted" property="deleted" />
+    </resultMap>
+    <resultMap id="AppShopProductVoResult" type="cn.edu.cumt.ec.shop.vo.ProductVo" >
+        <result column="product_id" property="productId" />
+        <result column="category_id" property="categoryId" />
+        <result column="product_name" property="productName" />
+        <result column="introduction" property="introduction" />
+        <result column="price" property="price" />
+        <result column="stock" property="stock" />
+        <result column="sale_count" property="saleCount" />
+        <result column="on_shelf" property="onShelf" />
+        <collection property="imageUrls" column="productId = product_id" ofType="cn.edu.cumt.ec.shop.entity.CosFile" select="selectOneCos"></collection>
+
+
+    </resultMap>
+    <resultMap id="ProductVoResult" type="cn.edu.cumt.ec.shop.vo.ProductVo" >
+        <result column="product_id" property="productId" />
+        <result column="category_id" property="categoryId" />
+        <result column="product_name" property="productName" />
+        <result column="introduction" property="introduction" />
+        <result column="price" property="price" />
+        <result column="stock" property="stock" />
+        <result column="sale_count" property="saleCount" />
+        <result column="on_shelf" property="onShelf" />
+        <collection property="imageUrls" ofType="cn.edu.cumt.ec.shop.entity.CosFile">
+            <id column="cos_file_id" property="cosFileId" />
+            <result column="file_type" property="fileType" />
+            <result column="file_ext_name" property="fileExtName" />
+            <result column="origin_file_name" property="originFileName" />
+            <result column="file_name" property="fileName" />
+            <result column="cos_url" property="cosUrl" />
+            <result column="cos_key" property="cosKey" />
+            <result column="file_size" property="fileSize" />
+        </collection>
+    </resultMap>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        product_id, category_id, product_name, introduction, price, stock, sale_count, on_shelf, creator_id, creator_name, created_datetime, editor_id, editor_name, updated_datetime, deleted
+    </sql>
+
+    <select id="appPage" resultMap="AppShopProductVoResult">
+        select st.product_id,sc.category_name,st.product_name,st.price, st.stock, st.sale_count
+        from product st
+        left join category sc on st.category_id = sc.category_id
+        where on_shelf = 1 and st.deleted = 0
+        <if test="queryParam.categoryId != null  and queryParam.categoryId != ''">
+            and st.category_id = #{queryParam.categoryId}
+        </if>
+        <if test="queryParam.productName != null  and queryParam.productName != ''">
+            and product_name like concat('%', #{queryParam.productName}, '%')
+        </if>
+    </select>
+
+    <select id="detail" resultMap="ProductVoResult">
+        select st.product_id, st.category_id,st.product_name, st.introduction, st.price, st.stock, st.sale_count, st.on_shelf,
+               c.cos_file_id,c.file_type, c.file_ext_name, c.origin_file_name, c.file_name, c.cos_url, c.cos_key, c.related_table_name, c.related_id, c.tag, c.file_size, c.uploader_id, c.uploader_name, c.upload_datetime
+        from product st
+                 left join cos_file c on c.related_table_name = 'product' and c.related_id = st.product_id
+        where st.product_id = #{productId}
+    </select>
+
+    <select id="selectOneCos" resultType="cn.edu.cumt.ec.shop.entity.CosFile">
+        select cos_file_id, file_type, file_ext_name, origin_file_name, file_name, cos_url from cos_file
+        where related_table_name = 'product' and related_id = #{productId} and deleted = 0
+        limit 0,1
+    </select>
+</mapper>

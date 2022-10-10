@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-4relative [%thread] %-5level %logger{35} - [%class : %method : %line] - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="File"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <Prudent>true</Prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <FileNamePattern>
+                ./logs/%d{yyyy-MM-dd}/%d{yyyy-MM-dd}.%i.log
+            </FileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>60</maxHistory>
+            <totalSizeCap>10GB</totalSizeCap>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-4relative [%thread] %-5level %logger{35} - [%class : %method : %line] - %msg%n</pattern>
+        </layout>
+    </appender>
+    <logger name="cn.edu.cumt.ec.shop" level="debug" />
+    <root level="INFO">
+       <appender-ref ref="STDOUT"/>
+        <appender-ref ref="File"/>
+    </root>
+</configuration>

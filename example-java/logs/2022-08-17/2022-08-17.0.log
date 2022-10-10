@@ -1,0 +1,639 @@
+2022-08-17 01:24:50 7373367 [http-nio-9090-exec-5] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing POST /auth/login
+2022-08-17 01:24:50 7373374 [http-nio-9090-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:24:50 7373375 [http-nio-9090-exec-5] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail null.
+2022-08-17 01:24:50 7373376 [http-nio-9090-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - [org.springframework.security.web.authentication.AnonymousAuthenticationFilter : doFilter : 100] - Set SecurityContextHolder to anonymous SecurityContext
+2022-08-17 01:24:50 7373376 [http-nio-9090-exec-5] DEBUG o.s.s.w.s.SessionManagementFilter - [org.springframework.security.web.session.SessionManagementFilter : doFilter : 116] - Request requested invalid session id B25953FED92F0F56A4ACE1A0D8D79886
+2022-08-17 01:24:50 7373377 [http-nio-9090-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [POST /auth/login] with attributes [permitAll]
+2022-08-17 01:24:50 7373377 [http-nio-9090-exec-5] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured POST /auth/login
+2022-08-17 01:24:50 7373383 [http-nio-9090-exec-5] DEBUG c.e.c.e.s.m.U.getJwtUserByPhoneNumber - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: select user_id userId, phone_number phoneNumber, email, user_name userName, pwd password, creator_id creatorId, creator_name creatorName, created_datetime creatorDateime, modifier_id, modifier_name, updated_datetime, deleted from `user` where phone_number=?
+2022-08-17 01:24:50 7373384 [http-nio-9090-exec-5] DEBUG c.e.c.e.s.m.U.getJwtUserByPhoneNumber - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 13775899277(String)
+2022-08-17 01:24:50 7373386 [http-nio-9090-exec-5] DEBUG c.e.c.e.s.m.U.getJwtUserByPhoneNumber - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 1
+2022-08-17 01:24:50 7373387 [http-nio-9090-exec-5] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 01:24:50 7373388 [http-nio-9090-exec-5] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 1(Long)
+2022-08-17 01:24:50 7373390 [http-nio-9090-exec-5] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 1
+2022-08-17 01:24:50 7373456 [http-nio-9090-exec-5] DEBUG o.s.s.a.d.DaoAuthenticationProvider - [org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider : createSuccessAuthentication : 199] - Authenticated user
+2022-08-17 01:24:50 7373462 [http-nio-9090-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:28:01 7564708 [http-nio-9090-exec-3] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing OPTIONS /auth/login
+2022-08-17 01:28:01 7564709 [http-nio-9090-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:28:01 7564709 [http-nio-9090-exec-3] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail null.
+2022-08-17 01:28:01 7564709 [http-nio-9090-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - [org.springframework.security.web.authentication.AnonymousAuthenticationFilter : doFilter : 100] - Set SecurityContextHolder to anonymous SecurityContext
+2022-08-17 01:28:01 7564709 [http-nio-9090-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [OPTIONS /auth/login] with attributes [permitAll]
+2022-08-17 01:28:01 7564710 [http-nio-9090-exec-3] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured OPTIONS /auth/login
+2022-08-17 01:28:01 7564719 [http-nio-9090-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:28:01 7564723 [http-nio-9090-exec-6] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing POST /auth/login
+2022-08-17 01:28:01 7564723 [http-nio-9090-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:28:01 7564723 [http-nio-9090-exec-6] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail null.
+2022-08-17 01:28:01 7564723 [http-nio-9090-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - [org.springframework.security.web.authentication.AnonymousAuthenticationFilter : doFilter : 100] - Set SecurityContextHolder to anonymous SecurityContext
+2022-08-17 01:28:01 7564724 [http-nio-9090-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [POST /auth/login] with attributes [permitAll]
+2022-08-17 01:28:01 7564724 [http-nio-9090-exec-6] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured POST /auth/login
+2022-08-17 01:28:01 7564728 [http-nio-9090-exec-6] DEBUG c.e.c.e.s.m.U.getJwtUserByPhoneNumber - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: select user_id userId, phone_number phoneNumber, email, user_name userName, pwd password, creator_id creatorId, creator_name creatorName, created_datetime creatorDateime, modifier_id, modifier_name, updated_datetime, deleted from `user` where phone_number=?
+2022-08-17 01:28:01 7564729 [http-nio-9090-exec-6] DEBUG c.e.c.e.s.m.U.getJwtUserByPhoneNumber - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 13775899277(String)
+2022-08-17 01:28:01 7564731 [http-nio-9090-exec-6] DEBUG c.e.c.e.s.m.U.getJwtUserByPhoneNumber - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 1
+2022-08-17 01:28:01 7564731 [http-nio-9090-exec-6] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 01:28:01 7564732 [http-nio-9090-exec-6] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 1(Long)
+2022-08-17 01:28:01 7564734 [http-nio-9090-exec-6] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 1
+2022-08-17 01:28:01 7564800 [http-nio-9090-exec-6] DEBUG o.s.s.a.d.DaoAuthenticationProvider - [org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider : createSuccessAuthentication : 199] - Authenticated user
+2022-08-17 01:28:01 7564805 [http-nio-9090-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:28:01 7564826 [http-nio-9090-exec-7] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing OPTIONS /users/current/resources
+2022-08-17 01:28:01 7564827 [http-nio-9090-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:28:01 7564827 [http-nio-9090-exec-7] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail null.
+2022-08-17 01:28:01 7564827 [http-nio-9090-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - [org.springframework.security.web.authentication.AnonymousAuthenticationFilter : doFilter : 100] - Set SecurityContextHolder to anonymous SecurityContext
+2022-08-17 01:28:01 7564827 [http-nio-9090-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [OPTIONS /users/current/resources] with attributes [permitAll]
+2022-08-17 01:28:01 7564828 [http-nio-9090-exec-7] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured OPTIONS /users/current/resources
+2022-08-17 01:28:01 7564829 [http-nio-9090-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:28:01 7564831 [http-nio-9090-exec-8] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing GET /users/current/resources
+2022-08-17 01:28:01 7564832 [http-nio-9090-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:28:01 7564834 [http-nio-9090-exec-8] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail 13775899277.
+2022-08-17 01:28:01 7564839 [http-nio-9090-exec-8] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 83] - Authenticated userDetail 13775899277, setting security context
+2022-08-17 01:28:01 7564839 [http-nio-9090-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [GET /users/current/resources] with attributes [authenticated]
+2022-08-17 01:28:01 7564840 [http-nio-9090-exec-8] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured GET /users/current/resources
+2022-08-17 01:28:01 7564842 [http-nio-9090-exec-8] DEBUG c.e.c.e.s.m.R.getByUserid - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: select C.resource_id,C.resource_name,C.resource_type,C.parent_resource_id,C.path,C.component,C.leaf,C.show_sequence,C.creator_id,C.creator_name,C.created_datetime,C.modifier_id,C.modifier_name,C.updated_datetime,C.deleted from user_role A inner join role_resource B on A.role_id=B.role_id inner join resource C on B.resource_id=C.resource_id where A.user_id=?
+2022-08-17 01:28:01 7564843 [http-nio-9090-exec-8] DEBUG c.e.c.e.s.m.R.getByUserid - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 1(Long)
+2022-08-17 01:28:01 7564858 [http-nio-9090-exec-8] DEBUG c.e.c.e.s.m.R.getByUserid - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 5
+2022-08-17 01:28:01 7564883 [http-nio-9090-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:28:04 7567893 [http-nio-9090-exec-10] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing OPTIONS /users/page
+2022-08-17 01:28:04 7567893 [http-nio-9090-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:28:04 7567894 [http-nio-9090-exec-10] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail null.
+2022-08-17 01:28:04 7567894 [http-nio-9090-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - [org.springframework.security.web.authentication.AnonymousAuthenticationFilter : doFilter : 100] - Set SecurityContextHolder to anonymous SecurityContext
+2022-08-17 01:28:04 7567894 [http-nio-9090-exec-9] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing OPTIONS /roles
+2022-08-17 01:28:04 7567894 [http-nio-9090-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [OPTIONS /users/page] with attributes [permitAll]
+2022-08-17 01:28:04 7567894 [http-nio-9090-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:28:04 7567895 [http-nio-9090-exec-10] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured OPTIONS /users/page
+2022-08-17 01:28:04 7567895 [http-nio-9090-exec-9] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail null.
+2022-08-17 01:28:04 7567895 [http-nio-9090-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - [org.springframework.security.web.authentication.AnonymousAuthenticationFilter : doFilter : 100] - Set SecurityContextHolder to anonymous SecurityContext
+2022-08-17 01:28:04 7567895 [http-nio-9090-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:28:04 7567896 [http-nio-9090-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [OPTIONS /roles] with attributes [permitAll]
+2022-08-17 01:28:04 7567896 [http-nio-9090-exec-9] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured OPTIONS /roles
+2022-08-17 01:28:04 7567897 [http-nio-9090-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:28:04 7567898 [http-nio-9090-exec-2] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing POST /users/page
+2022-08-17 01:28:04 7567899 [http-nio-9090-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:28:04 7567900 [http-nio-9090-exec-1] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing GET /roles
+2022-08-17 01:28:04 7567901 [http-nio-9090-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:28:04 7567901 [http-nio-9090-exec-2] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail 13775899277.
+2022-08-17 01:28:04 7567903 [http-nio-9090-exec-1] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail 13775899277.
+2022-08-17 01:28:04 7567904 [http-nio-9090-exec-2] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 83] - Authenticated userDetail 13775899277, setting security context
+2022-08-17 01:28:04 7567904 [http-nio-9090-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [POST /users/page] with attributes [authenticated]
+2022-08-17 01:28:04 7567905 [http-nio-9090-exec-2] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured POST /users/page
+2022-08-17 01:28:04 7567905 [http-nio-9090-exec-1] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 83] - Authenticated userDetail 13775899277, setting security context
+2022-08-17 01:28:04 7567906 [http-nio-9090-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [GET /roles] with attributes [authenticated]
+2022-08-17 01:28:04 7567906 [http-nio-9090-exec-1] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured GET /roles
+2022-08-17 01:28:04 7567914 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.RoleMapper.selectList - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: SELECT role_id,role_name,creator_id,creator_name,created_datetime,modifier_id,modifier_name,updated_datetime FROM role
+2022-08-17 01:28:04 7567914 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.RoleMapper.selectList - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 
+2022-08-17 01:28:04 7567916 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.RoleMapper.selectList - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 2
+2022-08-17 01:28:04 7567919 [http-nio-9090-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:28:04 7567959 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.UserMapper.page_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: SELECT COUNT(*) AS total FROM `user`
+2022-08-17 01:28:04 7567959 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.UserMapper.page_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 
+2022-08-17 01:28:04 7567962 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.UserMapper.page_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 1
+2022-08-17 01:28:04 7567966 [http-nio-9090-exec-2] DEBUG c.e.c.e.shop.mapper.UserMapper.page - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: select user_id, phone_number, email, user_name, creator_id, creator_name, created_datetime, modifier_id, modifier_name, updated_datetime, deleted from `user` LIMIT ?
+2022-08-17 01:28:04 7567967 [http-nio-9090-exec-2] DEBUG c.e.c.e.shop.mapper.UserMapper.page - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 5(Long)
+2022-08-17 01:28:04 7567970 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 01:28:04 7567971 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 1(BigDecimal)
+2022-08-17 01:28:04 7567972 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 1
+2022-08-17 01:28:04 7567974 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 01:28:04 7567974 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 2(BigDecimal)
+2022-08-17 01:28:04 7567976 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 1
+2022-08-17 01:28:04 7567977 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 01:28:04 7567978 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 3(BigDecimal)
+2022-08-17 01:28:04 7567980 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 1
+2022-08-17 01:28:04 7567981 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 01:28:04 7567983 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 4(BigDecimal)
+2022-08-17 01:28:04 7567985 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 0
+2022-08-17 01:28:04 7567986 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 01:28:04 7567986 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 5(BigDecimal)
+2022-08-17 01:28:04 7567988 [http-nio-9090-exec-2] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 2
+2022-08-17 01:28:04 7567990 [http-nio-9090-exec-2] DEBUG c.e.c.e.shop.mapper.UserMapper.page - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 5
+2022-08-17 01:28:04 7567995 [http-nio-9090-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:28:11 7574988 [http-nio-9090-exec-5] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing POST /users/page
+2022-08-17 01:28:11 7574989 [http-nio-9090-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:28:11 7574990 [http-nio-9090-exec-5] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail 13775899277.
+2022-08-17 01:28:11 7574992 [http-nio-9090-exec-5] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 83] - Authenticated userDetail 13775899277, setting security context
+2022-08-17 01:28:11 7574993 [http-nio-9090-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [POST /users/page] with attributes [authenticated]
+2022-08-17 01:28:11 7574993 [http-nio-9090-exec-5] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured POST /users/page
+2022-08-17 01:28:11 7574997 [http-nio-9090-exec-5] DEBUG c.e.c.e.s.m.UserMapper.page_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: SELECT COUNT(*) AS total FROM `user`
+2022-08-17 01:28:11 7574997 [http-nio-9090-exec-5] DEBUG c.e.c.e.s.m.UserMapper.page_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 
+2022-08-17 01:28:11 7574999 [http-nio-9090-exec-5] DEBUG c.e.c.e.s.m.UserMapper.page_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 1
+2022-08-17 01:28:11 7575000 [http-nio-9090-exec-5] DEBUG c.e.c.e.shop.mapper.UserMapper.page - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: select user_id, phone_number, email, user_name, creator_id, creator_name, created_datetime, modifier_id, modifier_name, updated_datetime, deleted from `user` LIMIT ?,?
+2022-08-17 01:28:11 7575001 [http-nio-9090-exec-5] DEBUG c.e.c.e.shop.mapper.UserMapper.page - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 10(Long), 5(Long)
+2022-08-17 01:28:11 7575002 [http-nio-9090-exec-5] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 01:28:11 7575002 [http-nio-9090-exec-5] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 1558377212287168513(BigDecimal)
+2022-08-17 01:28:11 7575003 [http-nio-9090-exec-5] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 0
+2022-08-17 01:28:11 7575004 [http-nio-9090-exec-5] DEBUG c.e.c.e.shop.mapper.UserMapper.page - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 1
+2022-08-17 01:28:11 7575007 [http-nio-9090-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:28:13 7576099 [http-nio-9090-exec-4] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing POST /users/page
+2022-08-17 01:28:13 7576099 [http-nio-9090-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:28:13 7576100 [http-nio-9090-exec-4] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail 13775899277.
+2022-08-17 01:28:13 7576104 [http-nio-9090-exec-4] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 83] - Authenticated userDetail 13775899277, setting security context
+2022-08-17 01:28:13 7576104 [http-nio-9090-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [POST /users/page] with attributes [authenticated]
+2022-08-17 01:28:13 7576104 [http-nio-9090-exec-4] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured POST /users/page
+2022-08-17 01:28:13 7576109 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.UserMapper.page_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: SELECT COUNT(*) AS total FROM `user`
+2022-08-17 01:28:13 7576109 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.UserMapper.page_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 
+2022-08-17 01:28:13 7576111 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.UserMapper.page_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 1
+2022-08-17 01:28:13 7576112 [http-nio-9090-exec-4] DEBUG c.e.c.e.shop.mapper.UserMapper.page - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: select user_id, phone_number, email, user_name, creator_id, creator_name, created_datetime, modifier_id, modifier_name, updated_datetime, deleted from `user` LIMIT ?,?
+2022-08-17 01:28:13 7576112 [http-nio-9090-exec-4] DEBUG c.e.c.e.shop.mapper.UserMapper.page - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 5(Long), 5(Long)
+2022-08-17 01:28:13 7576114 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 01:28:13 7576114 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 1534738681550884865(BigDecimal)
+2022-08-17 01:28:13 7576116 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 2
+2022-08-17 01:28:13 7576117 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 01:28:13 7576117 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 1534738861293658113(BigDecimal)
+2022-08-17 01:28:13 7576118 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 1
+2022-08-17 01:28:13 7576119 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 01:28:13 7576120 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 1546456495856869377(BigDecimal)
+2022-08-17 01:28:13 7576121 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 2
+2022-08-17 01:28:13 7576122 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 01:28:13 7576122 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 1546457613076848641(BigDecimal)
+2022-08-17 01:28:13 7576124 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 1
+2022-08-17 01:28:13 7576125 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 01:28:13 7576126 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 1546457865418760194(BigDecimal)
+2022-08-17 01:28:13 7576127 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 1
+2022-08-17 01:28:13 7576128 [http-nio-9090-exec-4] DEBUG c.e.c.e.shop.mapper.UserMapper.page - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 5
+2022-08-17 01:28:13 7576130 [http-nio-9090-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:50:13 8897079 [http-nio-9090-exec-7] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing POST /categories/vo/list
+2022-08-17 01:50:13 8897079 [http-nio-9090-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:50:13 8897079 [http-nio-9090-exec-8] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing POST /product/app/page
+2022-08-17 01:50:13 8897080 [http-nio-9090-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:50:13 8897080 [http-nio-9090-exec-8] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail null.
+2022-08-17 01:50:13 8897080 [http-nio-9090-exec-7] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail null.
+2022-08-17 01:50:13 8897080 [http-nio-9090-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - [org.springframework.security.web.authentication.AnonymousAuthenticationFilter : doFilter : 100] - Set SecurityContextHolder to anonymous SecurityContext
+2022-08-17 01:50:13 8897080 [http-nio-9090-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - [org.springframework.security.web.authentication.AnonymousAuthenticationFilter : doFilter : 100] - Set SecurityContextHolder to anonymous SecurityContext
+2022-08-17 01:50:13 8897081 [http-nio-9090-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : attemptAuthorization : 247] - Failed to authorize filter invocation [POST /categories/vo/list] with attributes [authenticated]
+2022-08-17 01:50:13 8897081 [http-nio-9090-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : attemptAuthorization : 247] - Failed to authorize filter invocation [POST /product/app/page] with attributes [authenticated]
+2022-08-17 01:50:13 8897082 [http-nio-9090-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:50:13 8897082 [http-nio-9090-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:50:34 8917687 [http-nio-9090-exec-10] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing POST /auth/login
+2022-08-17 01:50:34 8917687 [http-nio-9090-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:50:34 8917688 [http-nio-9090-exec-10] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail null.
+2022-08-17 01:50:34 8917688 [http-nio-9090-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - [org.springframework.security.web.authentication.AnonymousAuthenticationFilter : doFilter : 100] - Set SecurityContextHolder to anonymous SecurityContext
+2022-08-17 01:50:34 8917688 [http-nio-9090-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [POST /auth/login] with attributes [permitAll]
+2022-08-17 01:50:34 8917688 [http-nio-9090-exec-10] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured POST /auth/login
+2022-08-17 01:50:34 8917690 [http-nio-9090-exec-10] DEBUG c.e.c.e.s.m.U.getJwtUserByPhoneNumber - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: select user_id userId, phone_number phoneNumber, email, user_name userName, pwd password, creator_id creatorId, creator_name creatorName, created_datetime creatorDateime, modifier_id, modifier_name, updated_datetime, deleted from `user` where phone_number=?
+2022-08-17 01:50:34 8917691 [http-nio-9090-exec-10] DEBUG c.e.c.e.s.m.U.getJwtUserByPhoneNumber - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 13775899277(String)
+2022-08-17 01:50:34 8917692 [http-nio-9090-exec-10] DEBUG c.e.c.e.s.m.U.getJwtUserByPhoneNumber - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 1
+2022-08-17 01:50:34 8917693 [http-nio-9090-exec-10] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 01:50:34 8917694 [http-nio-9090-exec-10] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 1(Long)
+2022-08-17 01:50:34 8917695 [http-nio-9090-exec-10] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 1
+2022-08-17 01:50:34 8917762 [http-nio-9090-exec-10] DEBUG o.s.s.a.d.DaoAuthenticationProvider - [org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider : createSuccessAuthentication : 199] - Authenticated user
+2022-08-17 01:50:34 8917765 [http-nio-9090-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:50:34 8917810 [http-nio-9090-exec-9] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing POST /categories/vo/list
+2022-08-17 01:50:34 8917810 [http-nio-9090-exec-1] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing POST /product/app/page
+2022-08-17 01:50:34 8917810 [http-nio-9090-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:50:34 8917811 [http-nio-9090-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:50:34 8917812 [http-nio-9090-exec-1] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail 13775899277.
+2022-08-17 01:50:34 8917812 [http-nio-9090-exec-9] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail 13775899277.
+2022-08-17 01:50:34 8917816 [http-nio-9090-exec-1] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 83] - Authenticated userDetail 13775899277, setting security context
+2022-08-17 01:50:34 8917816 [http-nio-9090-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [POST /product/app/page] with attributes [authenticated]
+2022-08-17 01:50:34 8917817 [http-nio-9090-exec-1] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured POST /product/app/page
+2022-08-17 01:50:34 8917817 [http-nio-9090-exec-9] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 83] - Authenticated userDetail 13775899277, setting security context
+2022-08-17 01:50:34 8917817 [http-nio-9090-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [POST /categories/vo/list] with attributes [authenticated]
+2022-08-17 01:50:34 8917818 [http-nio-9090-exec-9] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured POST /categories/vo/list
+2022-08-17 01:50:34 8917832 [http-nio-9090-exec-9] DEBUG c.e.c.e.s.m.C.selectList - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: SELECT category_id,category_name,show_sequence,creator_id,creator_name,created_datetime,editor_id,editor_name,updated_datetime,deleted FROM category
+2022-08-17 01:50:34 8917832 [http-nio-9090-exec-9] DEBUG c.e.c.e.s.m.C.selectList - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 
+2022-08-17 01:50:34 8917841 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.appPage_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: SELECT COUNT(*) AS total FROM product st WHERE on_shelf = 1 AND st.deleted = 0
+2022-08-17 01:50:34 8917841 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.appPage_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 
+2022-08-17 01:50:34 8917847 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.appPage_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 1
+2022-08-17 01:50:34 8917848 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.ProductMapper.appPage - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: select st.product_id,sc.category_name,st.product_name,st.price, st.stock, st.sale_count from product st left join category sc on st.category_id = sc.category_id where on_shelf = 1 and st.deleted = 0 LIMIT ?
+2022-08-17 01:50:34 8917849 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.ProductMapper.appPage - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 4(Long)
+2022-08-17 01:50:34 8917853 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select cos_file_id, file_type, file_ext_name, origin_file_name, file_name, cos_url from cos_file where related_table_name = 'product' and related_id = ? and deleted = 0 limit 0,1
+2022-08-17 01:50:34 8917854 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 306872(BigDecimal)
+2022-08-17 01:50:34 8917861 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 0
+2022-08-17 01:50:34 8917862 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select cos_file_id, file_type, file_ext_name, origin_file_name, file_name, cos_url from cos_file where related_table_name = 'product' and related_id = ? and deleted = 0 limit 0,1
+2022-08-17 01:50:34 8917862 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 1752572(BigDecimal)
+2022-08-17 01:50:34 8917864 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 0
+2022-08-17 01:50:34 8917865 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select cos_file_id, file_type, file_ext_name, origin_file_name, file_name, cos_url from cos_file where related_table_name = 'product' and related_id = ? and deleted = 0 limit 0,1
+2022-08-17 01:50:34 8917865 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 2621543(BigDecimal)
+2022-08-17 01:50:34 8917866 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 0
+2022-08-17 01:50:34 8917867 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select cos_file_id, file_type, file_ext_name, origin_file_name, file_name, cos_url from cos_file where related_table_name = 'product' and related_id = ? and deleted = 0 limit 0,1
+2022-08-17 01:50:34 8917867 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 2816183(BigDecimal)
+2022-08-17 01:50:34 8917868 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 0
+2022-08-17 01:50:34 8917869 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.ProductMapper.appPage - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 4
+2022-08-17 01:50:34 8917871 [http-nio-9090-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:50:34 8917929 [http-nio-9090-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:50:34 8917935 [http-nio-9090-exec-9] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - [org.apache.juli.logging.DirectJDKLog : log : 175] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'editor_id' in 'field list'
+### The error may exist in cn/edu/cumt/ec/shop/mapper/CategoryMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  category_id,category_name,show_sequence,creator_id,creator_name,created_datetime,editor_id,editor_name,updated_datetime,deleted  FROM category
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'editor_id' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'editor_id' in 'field list'] with root cause
+java.sql.SQLSyntaxErrorException: Unknown column 'editor_id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:371)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.GeneratedMethodAccessor104.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy138.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at sun.reflect.GeneratedMethodAccessor103.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:64)
+	at com.sun.proxy.$Proxy136.query(Unknown Source)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:62)
+	at com.sun.proxy.$Proxy135.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	at com.sun.proxy.$Proxy86.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy102.selectList(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.IService.list(IService.java:289)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at cn.edu.cumt.ec.shop.service.impl.CategoryServiceImpl$$EnhancerBySpringCGLIB$$59e20329.list(<generated>)
+	at cn.edu.cumt.ec.shop.controller.CategoryController.list(CategoryController.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter.doFilterInternal(JwtAuthenticationTokenFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2022-08-17 01:50:34 8917938 [http-nio-9090-exec-9] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing POST /error
+2022-08-17 01:50:34 8917938 [http-nio-9090-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:50:34 8917938 [http-nio-9090-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - [org.springframework.security.web.authentication.AnonymousAuthenticationFilter : doFilter : 100] - Set SecurityContextHolder to anonymous SecurityContext
+2022-08-17 01:50:34 8917938 [http-nio-9090-exec-9] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured POST /error
+2022-08-17 01:50:34 8917940 [http-nio-9090-exec-9] ERROR c.e.c.e.s.c.ErrorController - [cn.edu.cumt.ec.shop.controller.ErrorController : error : 34] - 系统异常:{timestamp=Wed Aug 17 01:50:34 CST 2022, status=500, error=Internal Server Error, exception=org.springframework.jdbc.BadSqlGrammarException, trace=org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'editor_id' in 'field list'
+### The error may exist in cn/edu/cumt/ec/shop/mapper/CategoryMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  category_id,category_name,show_sequence,creator_id,creator_name,created_datetime,editor_id,editor_name,updated_datetime,deleted  FROM category
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'editor_id' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'editor_id' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:91)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy86.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy102.selectList(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.IService.list(IService.java:289)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at cn.edu.cumt.ec.shop.service.impl.CategoryServiceImpl$$EnhancerBySpringCGLIB$$59e20329.list(<generated>)
+	at cn.edu.cumt.ec.shop.controller.CategoryController.list(CategoryController.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter.doFilterInternal(JwtAuthenticationTokenFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'editor_id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:371)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.GeneratedMethodAccessor104.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy138.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at sun.reflect.GeneratedMethodAccessor103.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:64)
+	at com.sun.proxy.$Proxy136.query(Unknown Source)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:62)
+	at com.sun.proxy.$Proxy135.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 106 more
+, message=
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'editor_id' in 'field list'
+### The error may exist in cn/edu/cumt/ec/shop/mapper/CategoryMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  category_id,category_name,show_sequence,creator_id,creator_name,created_datetime,editor_id,editor_name,updated_datetime,deleted  FROM category
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'editor_id' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'editor_id' in 'field list', path=/categories/vo/list}
+2022-08-17 01:50:34 8917942 [http-nio-9090-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:50:39 8922205 [http-nio-9090-exec-2] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing GET /auth/user
+2022-08-17 01:50:39 8922205 [http-nio-9090-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:50:39 8922208 [http-nio-9090-exec-2] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail 13775899277.
+2022-08-17 01:50:39 8922211 [http-nio-9090-exec-2] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 83] - Authenticated userDetail 13775899277, setting security context
+2022-08-17 01:50:39 8922212 [http-nio-9090-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [GET /auth/user] with attributes [authenticated]
+2022-08-17 01:50:39 8922212 [http-nio-9090-exec-2] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured GET /auth/user
+2022-08-17 01:50:39 8922218 [http-nio-9090-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:50:40 8924009 [http-nio-9090-exec-5] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing GET /auth/user
+2022-08-17 01:50:40 8924009 [http-nio-9090-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:50:40 8924010 [http-nio-9090-exec-5] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail 13775899277.
+2022-08-17 01:50:40 8924014 [http-nio-9090-exec-5] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 83] - Authenticated userDetail 13775899277, setting security context
+2022-08-17 01:50:40 8924014 [http-nio-9090-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [GET /auth/user] with attributes [authenticated]
+2022-08-17 01:50:40 8924014 [http-nio-9090-exec-5] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured GET /auth/user
+2022-08-17 01:50:40 8924017 [http-nio-9090-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 01:50:52 8935676 [http-nio-9090-exec-4] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing POST /product/app/page
+2022-08-17 01:50:52 8935677 [http-nio-9090-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 01:50:52 8935678 [http-nio-9090-exec-4] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail 13775899277.
+2022-08-17 01:50:52 8935681 [http-nio-9090-exec-4] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 83] - Authenticated userDetail 13775899277, setting security context
+2022-08-17 01:50:52 8935681 [http-nio-9090-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [POST /product/app/page] with attributes [authenticated]
+2022-08-17 01:50:52 8935682 [http-nio-9090-exec-4] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured POST /product/app/page
+2022-08-17 01:50:52 8935697 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.P.appPage_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: SELECT COUNT(*) AS total FROM product st WHERE on_shelf = 1 AND st.deleted = 0 AND product_name LIKE concat('%', ?, '%')
+2022-08-17 01:50:52 8935697 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.P.appPage_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 冰丝(String)
+2022-08-17 01:50:52 8935699 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.P.appPage_mpCount - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 1
+2022-08-17 01:50:52 8935700 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.ProductMapper.appPage - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: select st.product_id,sc.category_name,st.product_name,st.price, st.stock, st.sale_count from product st left join category sc on st.category_id = sc.category_id where on_shelf = 1 and st.deleted = 0 and product_name like concat('%', ?, '%') LIMIT ?
+2022-08-17 01:50:52 8935701 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.ProductMapper.appPage - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 冰丝(String), 4(Long)
+2022-08-17 01:50:52 8935703 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select cos_file_id, file_type, file_ext_name, origin_file_name, file_name, cos_url from cos_file where related_table_name = 'product' and related_id = ? and deleted = 0 limit 0,1
+2022-08-17 01:50:52 8935704 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 306872(BigDecimal)
+2022-08-17 01:50:52 8935705 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 0
+2022-08-17 01:50:52 8935706 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select cos_file_id, file_type, file_ext_name, origin_file_name, file_name, cos_url from cos_file where related_table_name = 'product' and related_id = ? and deleted = 0 limit 0,1
+2022-08-17 01:50:52 8935706 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 4903155(BigDecimal)
+2022-08-17 01:50:52 8935708 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 0
+2022-08-17 01:50:52 8935708 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====>  Preparing: select cos_file_id, file_type, file_ext_name, origin_file_name, file_name, cos_url from cos_file where related_table_name = 'product' and related_id = ? and deleted = 0 limit 0,1
+2022-08-17 01:50:52 8935709 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ====> Parameters: 5858233(BigDecimal)
+2022-08-17 01:50:52 8935710 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.P.selectOneCos - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <====      Total: 0
+2022-08-17 01:50:52 8935711 [http-nio-9090-exec-4] DEBUG c.e.c.e.s.m.ProductMapper.appPage - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 3
+2022-08-17 01:50:52 8935712 [http-nio-9090-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 07:13:29 28292481 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - [com.zaxxer.hikari.pool.HikariPool$HouseKeeper : run : 788] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h25m16s872ms434µs900ns).
+2022-08-17 12:26:32 47075412 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - [com.zaxxer.hikari.HikariDataSource : close : 350] - HikariPool-1 - Shutdown initiated...
+2022-08-17 12:26:32 47075422 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - [com.zaxxer.hikari.HikariDataSource : close : 352] - HikariPool-1 - Shutdown completed.
+2022-08-17 21:22:19 709  [main] INFO  cn.edu.cumt.ec.shop.ShopApplication - [org.springframework.boot.StartupInfoLogger : logStarting : 55] - Starting ShopApplication using Java 1.8.0_333 on LAPTOP-CP4AU0H7 with PID 33396 (D:\电子商务课件\m09641\Example\example-java\target\classes started by 86176 in D:\电子商务课件\m09641\Example\example-java)
+2022-08-17 21:22:19 712  [main] DEBUG cn.edu.cumt.ec.shop.ShopApplication - [org.springframework.boot.StartupInfoLogger : logStarting : 56] - Running with Spring Boot v2.6.7, Spring v5.3.19
+2022-08-17 21:22:19 712  [main] INFO  cn.edu.cumt.ec.shop.ShopApplication - [org.springframework.boot.SpringApplication : logStartupProfileInfo : 640] - No active profile set, falling back to 1 default profile: "default"
+2022-08-17 21:22:20 1728 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [org.springframework.data.repository.config.RepositoryConfigurationDelegate : multipleStoresDetected : 262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-08-17 21:22:20 1730 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [org.springframework.data.repository.config.RepositoryConfigurationDelegate : registerRepositoriesIn : 132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-08-17 21:22:20 1767 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [org.springframework.data.repository.config.RepositoryConfigurationDelegate : registerRepositoriesIn : 201] - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2022-08-17 21:22:20 2423 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - [org.springframework.boot.web.embedded.tomcat.TomcatWebServer : initialize : 108] - Tomcat initialized with port(s): 9090 (http)
+2022-08-17 21:22:20 2433 [main] INFO  o.a.coyote.http11.Http11NioProtocol - [org.apache.juli.logging.DirectJDKLog : log : 173] - Initializing ProtocolHandler ["http-nio-9090"]
+2022-08-17 21:22:20 2434 [main] INFO  o.a.catalina.core.StandardService - [org.apache.juli.logging.DirectJDKLog : log : 173] - Starting service [Tomcat]
+2022-08-17 21:22:20 2434 [main] INFO  o.a.catalina.core.StandardEngine - [org.apache.juli.logging.DirectJDKLog : log : 173] - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-08-17 21:22:21 2747 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - [org.apache.juli.logging.DirectJDKLog : log : 173] - Initializing Spring embedded WebApplicationContext
+2022-08-17 21:22:21 2748 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : prepareWebApplicationContext : 290] - Root WebApplicationContext: initialization completed in 1995 ms
+2022-08-17 21:22:21 3270 [main] WARN  c.b.m.core.metadata.TableInfoHelper - [com.baomidou.mybatisplus.core.metadata.TableInfoHelper : initTableFields : 333] - Can not find table primary key in Class: "cn.edu.cumt.ec.shop.entity.Product".
+2022-08-17 21:22:21 3271 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - [com.baomidou.mybatisplus.core.injector.DefaultSqlInjector : getMethodList : 57] - class cn.edu.cumt.ec.shop.entity.Product ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-08-17 21:22:23 4691 [main] DEBUG c.e.c.e.s.s.JwtAuthenticationTokenFilter - [org.springframework.web.filter.GenericFilterBean : init : 242] - Filter 'jwtAuthenticationTokenFilter' configured for use
+2022-08-17 21:22:23 5290 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - [org.springframework.security.config.annotation.web.builders.WebSecurity : performBuild : 294] - You are asking Spring Security to ignore Ant [pattern='/doc.html']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-08-17 21:22:23 5291 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 52] - Will not secure Ant [pattern='/doc.html']
+2022-08-17 21:22:23 5291 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - [org.springframework.security.config.annotation.web.builders.WebSecurity : performBuild : 294] - You are asking Spring Security to ignore Ant [pattern='/swagger-ui.html']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-08-17 21:22:23 5292 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 52] - Will not secure Ant [pattern='/swagger-ui.html']
+2022-08-17 21:22:23 5292 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - [org.springframework.security.config.annotation.web.builders.WebSecurity : performBuild : 294] - You are asking Spring Security to ignore Ant [pattern='/swagger-ui/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-08-17 21:22:23 5292 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 52] - Will not secure Ant [pattern='/swagger-ui/*']
+2022-08-17 21:22:23 5292 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - [org.springframework.security.config.annotation.web.builders.WebSecurity : performBuild : 294] - You are asking Spring Security to ignore Ant [pattern='/swagger-resources/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-08-17 21:22:23 5292 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 52] - Will not secure Ant [pattern='/swagger-resources/**']
+2022-08-17 21:22:23 5292 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - [org.springframework.security.config.annotation.web.builders.WebSecurity : performBuild : 294] - You are asking Spring Security to ignore Ant [pattern='/v2/api-docs']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-08-17 21:22:23 5293 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 52] - Will not secure Ant [pattern='/v2/api-docs']
+2022-08-17 21:22:23 5293 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - [org.springframework.security.config.annotation.web.builders.WebSecurity : performBuild : 294] - You are asking Spring Security to ignore Ant [pattern='/v3/api-docs']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-08-17 21:22:23 5293 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 52] - Will not secure Ant [pattern='/v3/api-docs']
+2022-08-17 21:22:23 5293 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - [org.springframework.security.config.annotation.web.builders.WebSecurity : performBuild : 294] - You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-08-17 21:22:23 5293 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 52] - Will not secure Ant [pattern='/webjars/**']
+2022-08-17 21:22:23 5293 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - [org.springframework.security.config.annotation.web.builders.WebSecurity : performBuild : 294] - You are asking Spring Security to ignore Ant [pattern='/favicon.ico']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-08-17 21:22:23 5293 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 52] - Will not secure Ant [pattern='/favicon.ico']
+2022-08-17 21:22:23 5293 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - [org.springframework.security.config.annotation.web.builders.WebSecurity : performBuild : 294] - You are asking Spring Security to ignore Ant [pattern='/**/*.html']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-08-17 21:22:23 5294 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 52] - Will not secure Ant [pattern='/**/*.html']
+2022-08-17 21:22:23 5294 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - [org.springframework.security.config.annotation.web.builders.WebSecurity : performBuild : 294] - You are asking Spring Security to ignore Ant [pattern='/**/*.js']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-08-17 21:22:23 5294 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 52] - Will not secure Ant [pattern='/**/*.js']
+2022-08-17 21:22:23 5294 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - [org.springframework.security.config.annotation.web.builders.WebSecurity : performBuild : 294] - You are asking Spring Security to ignore Ant [pattern='/**.json']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-08-17 21:22:23 5294 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 52] - Will not secure Ant [pattern='/**.json']
+2022-08-17 21:22:23 5294 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - [org.springframework.security.config.annotation.web.builders.WebSecurity : performBuild : 294] - You are asking Spring Security to ignore Ant [pattern='/**/*.css']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-08-17 21:22:23 5294 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 52] - Will not secure Ant [pattern='/**/*.css']
+2022-08-17 21:22:23 5294 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - [org.springframework.security.config.annotation.web.builders.WebSecurity : performBuild : 294] - You are asking Spring Security to ignore Ant [pattern='/**/*.jpg']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-08-17 21:22:23 5295 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 52] - Will not secure Ant [pattern='/**/*.jpg']
+2022-08-17 21:22:23 5295 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - [org.springframework.security.config.annotation.web.builders.WebSecurity : performBuild : 294] - You are asking Spring Security to ignore Ant [pattern='/**/*.png']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-08-17 21:22:23 5295 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 52] - Will not secure Ant [pattern='/**/*.png']
+2022-08-17 21:22:23 5321 [main] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - [org.springframework.security.web.access.expression.ExpressionBasedFilterInvocationSecurityMetadataSource : process : 72] - Adding web access control expression [permitAll] for Ant [pattern='/auth/login']
+2022-08-17 21:22:23 5323 [main] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - [org.springframework.security.web.access.expression.ExpressionBasedFilterInvocationSecurityMetadataSource : process : 72] - Adding web access control expression [permitAll] for Ant [pattern='/auth/sign']
+2022-08-17 21:22:23 5323 [main] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - [org.springframework.security.web.access.expression.ExpressionBasedFilterInvocationSecurityMetadataSource : process : 72] - Adding web access control expression [permitAll] for Ant [pattern='/webjars/**']
+2022-08-17 21:22:23 5324 [main] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - [org.springframework.security.web.access.expression.ExpressionBasedFilterInvocationSecurityMetadataSource : process : 72] - Adding web access control expression [permitAll] for Ant [pattern='/error/**']
+2022-08-17 21:22:23 5324 [main] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - [org.springframework.security.web.access.expression.ExpressionBasedFilterInvocationSecurityMetadataSource : process : 72] - Adding web access control expression [permitAll] for cn.edu.cumt.ec.shop.config.WebConfig$$Lambda$770/2143419697@36665c11
+2022-08-17 21:22:23 5324 [main] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - [org.springframework.security.web.access.expression.ExpressionBasedFilterInvocationSecurityMetadataSource : process : 72] - Adding web access control expression [authenticated] for any request
+2022-08-17 21:22:23 5330 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [org.springframework.security.web.DefaultSecurityFilterChain : <init> : 55] - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22c29aa8, org.springframework.security.web.context.SecurityContextPersistenceFilter@5950054d, org.springframework.security.web.header.HeaderWriterFilter@43445fc6, org.springframework.security.web.authentication.logout.LogoutFilter@e4b54d3, cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter@5fb07347, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4cf230bf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@430d3021, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@129b69b2, org.springframework.security.web.session.SessionManagementFilter@70c31b17, org.springframework.security.web.access.ExceptionTranslationFilter@4fd37449, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4b9f7edc]
+2022-08-17 21:22:24 6008 [main] INFO  o.a.coyote.http11.Http11NioProtocol - [org.apache.juli.logging.DirectJDKLog : log : 173] - Starting ProtocolHandler ["http-nio-9090"]
+2022-08-17 21:22:24 6027 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - [org.springframework.boot.web.embedded.tomcat.TomcatWebServer : start : 220] - Tomcat started on port(s): 9090 (http) with context path ''
+2022-08-17 21:22:24 6230 [main] WARN  s.d.s.r.o.OperationImplicitParameterReader - [springfox.documentation.swagger.readers.operation.OperationImplicitParameterReader : modelSpecification : 170] - Unable to interpret the implicit parameter configuration with dataType: string, dataTypeClass: class java.lang.Void
+2022-08-17 21:22:24 6242 [main] WARN  s.d.s.r.o.OperationImplicitParameterReader - [springfox.documentation.swagger.readers.operation.OperationImplicitParameterReader : modelSpecification : 170] - Unable to interpret the implicit parameter configuration with dataType: string, dataTypeClass: class java.lang.Void
+2022-08-17 21:22:24 6395 [main] INFO  cn.edu.cumt.ec.shop.ShopApplication - [org.springframework.boot.StartupInfoLogger : logStarted : 61] - Started ShopApplication in 6.072 seconds (JVM running for 7.547)
+2022-08-17 21:24:37 139315 [http-nio-9090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - [org.apache.juli.logging.DirectJDKLog : log : 173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-17 21:24:37 139316 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - [org.springframework.web.servlet.FrameworkServlet : initServletBean : 525] - Initializing Servlet 'dispatcherServlet'
+2022-08-17 21:24:37 139317 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - [org.springframework.web.servlet.FrameworkServlet : initServletBean : 547] - Completed initialization in 1 ms
+2022-08-17 21:24:37 139328 [http-nio-9090-exec-1] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy : doFilterInternal : 208] - Securing POST /auth/login
+2022-08-17 21:24:37 139332 [http-nio-9090-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 102] - Set SecurityContextHolder to empty SecurityContext
+2022-08-17 21:24:37 139346 [http-nio-9090-exec-1] INFO  c.e.c.e.s.s.JwtAuthenticationTokenFilter - [cn.edu.cumt.ec.shop.security.JwtAuthenticationTokenFilter : doFilterInternal : 69] - Checking authentication for userDetail null.
+2022-08-17 21:24:37 139348 [http-nio-9090-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - [org.springframework.security.web.authentication.AnonymousAuthenticationFilter : doFilter : 100] - Set SecurityContextHolder to anonymous SecurityContext
+2022-08-17 21:24:37 139348 [http-nio-9090-exec-1] DEBUG o.s.s.w.s.SessionManagementFilter - [org.springframework.security.web.session.SessionManagementFilter : doFilter : 116] - Request requested invalid session id B25953FED92F0F56A4ACE1A0D8D79886
+2022-08-17 21:24:37 139354 [http-nio-9090-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - [org.springframework.security.access.intercept.AbstractSecurityInterceptor : beforeInvocation : 210] - Authorized filter invocation [POST /auth/login] with attributes [permitAll]
+2022-08-17 21:24:37 139355 [http-nio-9090-exec-1] DEBUG o.s.security.web.FilterChainProxy - [org.springframework.security.web.FilterChainProxy$VirtualFilterChain : doFilter : 323] - Secured POST /auth/login
+2022-08-17 21:24:38 139639 [http-nio-9090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - [com.zaxxer.hikari.HikariDataSource : getConnection : 110] - HikariPool-1 - Starting...
+2022-08-17 21:24:38 140339 [http-nio-9090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - [com.zaxxer.hikari.HikariDataSource : getConnection : 123] - HikariPool-1 - Start completed.
+2022-08-17 21:24:38 140346 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.U.getJwtUserByPhoneNumber - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: select user_id userId, phone_number phoneNumber, email, user_name userName, pwd password, creator_id creatorId, creator_name creatorName, created_datetime creatorDateime, modifier_id, modifier_name, updated_datetime, deleted from `user` where phone_number=?
+2022-08-17 21:24:38 140369 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.U.getJwtUserByPhoneNumber - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 13775899277(String)
+2022-08-17 21:24:38 140394 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.U.getJwtUserByPhoneNumber - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 1
+2022-08-17 21:24:38 140400 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==>  Preparing: select * from role r inner join user_role ur on r.role_id=ur.role_id where ur.user_id=?
+2022-08-17 21:24:38 140400 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - ==> Parameters: 1(Long)
+2022-08-17 21:24:38 140406 [http-nio-9090-exec-1] DEBUG c.e.c.e.s.m.RoleMapper.listByUserId - [org.apache.ibatis.logging.jdbc.BaseJdbcLogger : debug : 137] - <==      Total: 1
+2022-08-17 21:24:38 140471 [http-nio-9090-exec-1] DEBUG o.s.s.a.d.DaoAuthenticationProvider - [org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider : createSuccessAuthentication : 199] - Authenticated user
+2022-08-17 21:24:40 141637 [http-nio-9090-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - [org.springframework.security.web.context.SecurityContextPersistenceFilter : doFilter : 118] - Cleared SecurityContextHolder to complete request
+2022-08-17 21:25:52 213785 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - [com.zaxxer.hikari.HikariDataSource : close : 350] - HikariPool-1 - Shutdown initiated...
+2022-08-17 21:25:52 213797 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - [com.zaxxer.hikari.HikariDataSource : close : 352] - HikariPool-1 - Shutdown completed.

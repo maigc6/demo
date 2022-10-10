@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.cumt.ec.shop.mapper.UserOrgMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.edu.cumt.ec.shop.entity.UserOrg">
+        <id column="user_org_id" property="userOrgId" />
+        <result column="user_id" property="userId" />
+        <result column="org_sn" property="orgSn" />
+        <result column="entry_datetime" property="entryDatetime" />
+        <result column="on_job" property="onJob" />
+        <result column="creator_id" property="creatorId" />
+        <result column="creator_name" property="creatorName" />
+        <result column="created_datetime" property="createdDatetime" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modifier_name" property="modifierName" />
+        <result column="updated_datetime" property="updatedDatetime" />
+        <result column="enabled" property="enabled" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_org_id, user_id, org_sn, entry_datetime, on_job, creator_id, creator_name, created_datetime, modifier_id, modifier_name, updated_datetime, enabled
+    </sql>
+
+</mapper>

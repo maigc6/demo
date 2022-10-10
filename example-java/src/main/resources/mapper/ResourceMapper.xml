@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.cumt.ec.shop.mapper.ResourceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.edu.cumt.ec.shop.entity.Resource">
+        <id column="resource_id" property="resourceId" />
+        <result column="resource_name" property="resourceName" />
+        <result column="resource_type" property="resourceType" />
+        <result column="parent_resource_id" property="parentResourceId" />
+        <result column="path" property="path" />
+        <result column="component" property="component" />
+        <result column="leaf" property="leaf" />
+        <result column="show_sequence" property="showSequence" />
+        <result column="creator_id" property="creatorId" />
+        <result column="creator_name" property="creatorName" />
+        <result column="created_datetime" property="createdDatetime" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modifier_name" property="modifierName" />
+        <result column="updated_datetime" property="updatedDatetime" />
+        <result column="deleted" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        resource_id, resource_name, resource_type, parent_resource_id, path, component, leaf, show_sequence, creator_id, creator_name, created_datetime, modifier_id, modifier_name, updated_datetime, deleted
+    </sql>
+
+    <select id="getByUserid" resultMap="BaseResultMap">
+        select C.resource_id,C.resource_name,C.resource_type,C.parent_resource_id,C.path,C.component,C.leaf,C.show_sequence,C.creator_id,C.creator_name,C.created_datetime,C.modifier_id,C.modifier_name,C.updated_datetime,C.deleted
+        from user_role A inner join role_resource B on A.role_id=B.role_id
+            inner join resource C on B.resource_id=C.resource_id
+        where A.user_id=#{userId}
+    </select>
+</mapper>
